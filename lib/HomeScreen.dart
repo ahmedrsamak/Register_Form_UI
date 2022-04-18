@@ -6,6 +6,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xFF242a3a),
       appBar: AppBar(
         title: const Text(
@@ -38,11 +39,31 @@ class HomeScreen extends StatelessWidget {
               TextFormField(
                 // ToDo add controller var
                 decoration: InputDecoration(
-                  icon: Icon(Icons.person),
-                  label: const Text(
-                    "Name",
-                    style: TextStyle(fontSize: 25),
+                  prefixIcon: const Icon(Icons.person),
+                  labelText: "Name",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextFormField(
+                // ToDo add controller var
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.email_rounded),
+                  labelText: "Email",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextFormField(
+                // ToDo add controller var
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.security),
+                  suffixIcon: const Icon(Icons.remove_red_eye),
+                  labelText: "Password",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
